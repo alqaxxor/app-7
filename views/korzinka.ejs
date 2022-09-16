@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Korzinka</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Kорзинка</h1>
+            <ol style="display: flex; flex-wrap: wrap;">
+                <% orderFood.map(e=>{ %>
+                    <li style="margin-right: 30px; border: 1px solid #000; padding: 10px; text-align: center;" data-id="<%= e.id%>">
+                        <div >
+                            <img src="<%= e.img%>" alt="<%= e.name%>" width="200" height="200">
+                            <h3><%= e.name%></h3>
+                            <p><%= e.price%> sum</p>
+                        </div>
+                        <input class="reset" type="button" name="delete" data-id="<%= e.id%>" value="O'chirish">
+                        <input class="count" data-productId="<%= e.id%>" style="width: 30%;" type="number" name="count" value="1" placeholder="count">
+                    </li>
+                <%})%> 
+                </ol>
+            <form class="formUser" style="width: 50%; height: 100px; display: flex; flex-direction: column; justify-content: space-between;" method="POST" enctype="application/x-www-form-urlencoded" action="/order">
+                <input type="text" name="user_name" placeholder="name">
+                <input type="text" name="address" placeholder="address">
+                <input type="tel" name="user_phone" placeholder="tel">
+                <button type="submit">Oforment *_*</button>
+            </form>
+        </div>
+        <script>
+            function get_cookie(name){
+                return document.cookie.split(';').some(c => {
+                return c.trim().startsWith(name + '=');
+                    });
+                }
+            function delete_cookie( name, path, domain ) {
+                if( get_cookie( name ) ) {
+                    document.cookie = name + "=" +
+                    ((path) ? ";path="+path:"")+
+                    ((domain)?";domain="+domain:"") +
+                    ";expires=Thu, 01 Jan 1970 00:00:01 GMT";
+                }
+            }
+            
+            const delet=document.querySelector('ol')
+            delet.addEventListener('click',evt=>{
+                evt.preventDefault()
+                if(evt.target.dataset.id) {
+                    delete_cookie(`productId${evt.target.dataset.id}`,'/','localhost')
+                    window.location.href='http://localhost:5050/korzinka'
+                }
+
+            })
+        </script>
+    </body>
+</html> 

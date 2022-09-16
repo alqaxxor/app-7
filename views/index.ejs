@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Index</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <nav>
+                    <ul style="display: flex; list-style: none; justify-content: space-around;">
+                        <li style="border: 1px solid #000; padding: 8px;">
+                            <a style="font-size: 20px; font-weight: 600; text-decoration: none;"  href="/restorouns">Add electronica</a>
+                        </li>
+                        <li  style="border: 1px solid #000; padding: 8px;">
+                            <a style="font-size: 20px; font-weight: 600; text-decoration: none;" href="/admin">Add clothes</a>
+                        </li>
+                        <li  style="border: 1px solid #000; padding: 8px;">
+                            <a style="font-size: 20px; font-weight: 600; text-decoration: none;" href="/orders">Orders</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <section>  
+               
+                <form style="margin: 0 auto;" class="meals" action="/meals" enctype="application/x-www-form-urlencoded" method="post">
+                    <h1>Add Meals</h1>
+                    <input type="text" name="name" placeholder="name">
+                    <input type="text" name="img" placeholder="url img product">
+                    <input type="text" name="price" placeholder="price">
+                    <select name="restaraunId">
+                        <% restorouns.map(e=>{ %>
+                            <option value="<%= e.id%>"><%= e.name%></option>
+                        <%})%> 
+                    </select>
+                    <button type="submit">Add meals</button>
+                </form>
+            </section>
+            <section>
+               <ul id="ol" style="list-style: none;">
+                    <% meals.map(e=>{ %>
+                        <li style="margin-bottom: 20px; padding: 10px; border: 1px solid #000;">
+                            <img src="<%= e.img%>" alt="" width="200" height="200">
+                            <h3><%= e.name%></h3>
+                            <button data-id="<%= e.id%>" type="click">Delete</button>
+                        </li>
+                    <%})%> 
+                </ul>
+            </section>
+        </div>
+        <script src="./js/main.js">
+            
+        </script>
+    </body>
+</html>

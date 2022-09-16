@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "Oqtepa Lavash",
+        "catigory": "fast food",
+        "adress": "Beruniy",
+        "img": "https://img1.mydrivers.com/img/20220916/s_ac9a6e6edc754b9890f127c51edb9755.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Milliy taomlar",
+        "catigory": "fast food",
+        "adress": "chilonzor",
+        "img": "https://img1.mydrivers.com/img/20220916/s_ac9a6e6edc754b9890f127c51edb9755.jpg"
+    }
+]

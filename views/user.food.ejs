@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Foods user</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="foods container">
+            <h1>Foods</h1>
+            <a style="text-decoration: none; font-size: 20px; font-weight: 600; color: #000;" href="http://localhost:5050/korzinka">Kорзинка</a>
+        </div>
+        <section class="container">
+            <ol id="ol-list"style="list-style:none;">
+                <% meals.map(e=>{ %>
+                    <li style="padding: 10px; border: 1px solid #000; margin-bottom: 20px;">
+                        <img src="<%= e.img%>" alt="" width="200" height="200">
+                        <h3><%= e.name%></h3>
+                        <button data-id="<%= e.id%>" type="click">Add to card</button>
+                    </li>
+                <%})%> 
+           </ol>
+        </section>
+        <script src="./js/addCard.js">
+            
+        </script>
+    </body>
+</html>

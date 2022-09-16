@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Restorouns order</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <h1 style="text-align: center;">Restorouns</h1>
+        
+            <ul style="display: flex; flex-wrap: wrap; justify-content: center; list-style: none;" class="list">
+                <% restorouns.map(e=>{ %>
+                    <li style="margin-right: 15px; padding: 10px; border: 1px solid #000; margin-bottom: 20px;" data-id="<%= e.id%>">
+                        <img data-id="<%= e.id%>" src="<%= e.img%>" alt="" width="200" height="200">
+                        <h3 data-id="<%= e.id%>"><%= e.name%></h3>
+                    </li>
+                <%})%> 
+            </ul>
+        </div>
+        <script src="./js/food.js">
+            
+        </script>
+    </body>
+</html> 

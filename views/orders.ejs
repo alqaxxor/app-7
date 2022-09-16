@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Orders</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+       <div class="container">
+            
+                <nav>
+                    <ul style="display: flex; list-style: none; justify-content: space-around;">
+                        <li style="border: 1px solid #000; padding: 8px;">
+                            <a style="font-size: 20px; font-weight: 600; text-decoration: none;"  href="/restorouns">Add restorouns</a>
+                        </li>
+                        <li  style="border: 1px solid #000; padding: 8px;">
+                            <a style="font-size: 20px; font-weight: 600; text-decoration: none;" href="/admin">Add meals</a>
+                        </li>
+                        <li  style="border: 1px solid #000; padding: 8px;">
+                            <a style="font-size: 20px; font-weight: 600; text-decoration: none;" href="/orders">Orders</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <h1>Orders</h1>
+            <section>
+                <ul>
+
+                    <% orders.length>=1 ? orders.map(e=>{ %>
+                        <li>
+                            <h4>user name: <%= e.user_name%></h4>
+                            <p>user phone: <%= e.user_phone%></p>
+                            <p>user adress: <%= e.address%></p>
+                            <ol>
+                                <%e.foods&& e.foods.map(el=>{%>
+                                    <li>
+                                        <h5>foodName: <%= el.foodName.name %></h5>
+                                        <p>price: <%= el.foodName.price%> sum</p>
+                                        <p>count: <%= el.countFood%></p>
+                                        <p>restoroun name: <%= el.foodName.restorouns.name%></p>
+                                        <p>restoroun adress: <%= el.foodName.restorouns.adress%></p>
+                                    </li>
+                                <%})%>
+                            </ol>
+                        </li>
+                    <%}) :""%>
+                </ul>
+            </section>
+       </div>
+    </body>
+</html>

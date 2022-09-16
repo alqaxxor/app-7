@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Restorouns</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <nav>
+                    <ul style="display: flex; list-style: none; justify-content: space-around;">
+                        <li style="border: 1px solid #000; padding: 8px;">
+                            <a style="font-size: 20px; font-weight: 600; text-decoration: none;"  href="/restorouns">Add electronica</a>
+                        </li>
+                        <li  style="border: 1px solid #000; padding: 8px;">
+                            <a style="font-size: 20px; font-weight: 600; text-decoration: none;" href="/admin">Add meals</a>
+                        </li>
+                        <li  style="border: 1px solid #000; padding: 8px;">
+                            <a style="font-size: 20px; font-weight: 600; text-decoration: none;" href="/orders">Orders</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <section>
+                <form style="margin: 0 auto;" class="meals" action="/rest" enctype="application/x-www-form-urlencoded" method="post">
+                    <h1>Add electronica</h1>
+                    <input type="text" name="model" placeholder="model">
+                    <input type="text" name="product_name" placeholder="product_name">
+                    <input type="text" name="img" placeholder="url img">
+                    <select name="catigory">
+                        <option  value="fast food">electronica</option>
+                        <option value="milliy taomlar">clothes</option>
+                    </select>
+                    <button type="submit">Add electronica</button>
+                </form>
+            </section>
+            <section>
+                <ul>
+                    <ol class="list" id="ol" style="list-style: none;">
+                        <% restorouns.map(e=>{ %>
+                            <li style="padding: 10px; border: 1px solid #000; margin-bottom: 20px;">
+                                <img src="<%= e.img%>" alt="" width="200" height="200">
+                                <h3><%= e.name%></h3>
+                                <button data-id="<%= e.id%>" type="click">Delete</button>
+                            </li>
+                        <%})%> 
+                </ol>
+                </ul>
+            </section>
+        </div>
+        <script src="./js/rest.js">
+            
+        </script>
+    </body>
+</html> 

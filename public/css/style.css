@@ -1,0 +1,40 @@
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+.foods{
+    display: flex;
+    
+    width: 800px;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+#ol-list {
+    display: flex;
+    width: 800px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#ol-list li {
+    margin-right: 20px;
+}
+#ol {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+#ol li {
+    margin-right: 20px;
+}
+.meals {
+    display: flex;
+   
+    flex-direction: column;
+    width: 30%;
+    height: 250px;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}

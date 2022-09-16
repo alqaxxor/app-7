@@ -1,0 +1,16 @@
+[
+    {
+        "id": 2,
+        "name": "@Lqahhor",
+        "restaraunId": "2",
+        "img": "https://img1.mydrivers.com/img/20220916/s_ac9a6e6edc754b9890f127c51edb9755.jpg",
+        "price": "150 000"
+    },
+    {
+        "id": 3,
+        "name": "abduqahhor",
+        "restaraunId": "1",
+        "img": "https://img1.mydrivers.com/img/20220916/s_ac9a6e6edc754b9890f127c51edb9755.jpg",
+        "price": "150 000"
+    }
+]

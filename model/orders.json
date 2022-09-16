@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "user_name": "",
+        "user_phone": "",
+        "meals": [
+            {
+                "mealsId": "27",
+                "count": 1
+            }
+        ],
+        "address": ""
+    },
+    {
+        "id": 2,
+        "user_name": "abduqahhor",
+        "user_phone": "998931854507",
+        "meals": [
+            {
+                "mealsId": "4",
+                "count": 1
+            }
+        ],
+        "address": "yangyol shahar"
+    },
+    {
+        "id": 3,
+        "user_name": "alqaxxor",
+        "user_phone": "998931854507",
+        "meals": [
+            {
+                "mealsId": "1",
+                "count": 1
+            }
+        ],
+        "address": "Olmos mfy, olmos k №13"
+    }
+]

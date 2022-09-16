@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Category</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <h1>Category</h1>
+
+            <form  id="form" enctype="application/x-www-form-urlencoded" action="/category" method="post" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center; height: 50px;">
+                <input style="width: 200px;" type="submit" data-category="fast food" name="fast" value="fast food" />
+                <input style="width: 200px;" type="submit" data-category="milliy taom" name="milliy" value="milliy taom" />
+            </form>
+        </div>
+       <script>
+            function deleteAllCookies() {
+                let cookies = document.cookie.split(";");
+
+                for (let i = 0; i < cookies.length; i++) {
+                    let cookie = cookies[i];
+                    let eqPos = cookie.indexOf("=");
+                    let name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+                }
+            }
+            deleteAllCookies()
+       </script>    
+    </body>
+</html>
